@@ -45,8 +45,8 @@ export class SalesPredictionViewComponent implements OnInit {
     await this.esperar(5000);
 
     const dialogRef = this.dialog.open(OrdersViewModalComponent, {
-      width: '800px',  
-      height: '800px', 
+      width: '700px',  
+      height: '500px', 
       disableClose: true,
    
       data: this.obj,
@@ -60,12 +60,8 @@ export class SalesPredictionViewComponent implements OnInit {
 
 
 
-  async openDialogNew(): Promise<void> {
+  async openDialogNew(id:any): Promise<void> {
 
-
-    //this.ordersViewModalService.getOrdersByCustomer().subscribe(data => {
-    //  this.obj = data;
-    //});
 
 
     await this.esperar(5000);
@@ -74,6 +70,7 @@ export class SalesPredictionViewComponent implements OnInit {
       width: '1200px',
       height: '1000px',
       disableClose: true,
+      data: id
 
      // data: this.obj,
     });

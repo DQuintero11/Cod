@@ -18,7 +18,7 @@ import { ShipperService, ShipperDropDown } from '../services/shipper.service';
 
 import { MatDialogRef } from '@angular/material/dialog';
 
-
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'ordersnew-modal',
@@ -63,7 +63,8 @@ export class OrdersNewModalComponent {
     private emploService: EmployeeService,
     private prodService: ProductService,
     private shipperService: ShipperService,
-    private ordernewModalService: OrderNewModalService
+    private ordernewModalService: OrderNewModalService,
+    @Inject(MAT_DIALOG_DATA) public data: any
   )
   {
     this.selectedEmpleado = this.emplo[0]?.empid;
@@ -73,11 +74,11 @@ export class OrdersNewModalComponent {
 
 
   onSave() {
-
-
+;
     this._orderRequest.empid = this.selectedEmpleado;
     this._orderRequest.productid = this.selectedProducto;
     this._orderRequest.shipperid = this.selectedShipper;
+    this._orderRequest.custid = this.data;
 
     this.ordernewModalService.saveData(this._orderRequest).subscribe(
       response => {
