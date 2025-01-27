@@ -88,6 +88,10 @@ export class OrdersNewModalComponent {
         console.error('Error al guardar datos:', error);
       }
     );
+
+    window.alert("Info guardada correctamente");
+
+    this.closeForm();
   }
 
 
