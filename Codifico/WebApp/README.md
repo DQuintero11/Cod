@@ -61,4 +61,5 @@ En los archivos del directorio services se encuentran todas las peticiones al we
 Se tenia planeado instalar la libreria toastr para hacer mas amigables los mensajes en la pagina, pero no alcance a realizar 
 su implementacion
 
+Por ultimo se realiza subida de archivos a GITHUB
 
