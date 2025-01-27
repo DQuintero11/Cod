@@ -34,10 +34,10 @@ export class SalesPredictionViewComponent implements OnInit {
 };
 
 
-  async openDialog(): Promise<void> {
+  async openDialog(id:any): Promise<void> {
 
- 
-    this.ordersViewModalService.getOrdersByCustomer().subscribe(data => {
+
+    this.ordersViewModalService.getOrdersByCustomerId(id).subscribe(data => {
       this.obj = data;
     });
 

@@ -38,7 +38,7 @@
         <td>{{ registro.fechaPosibleSiguienteOrden | date:'shortDate'  }}</td>
         <td>
 
-          <button mat-raised-button (click)="openDialog()">
+          <button mat-raised-button (click)="openDialog(registro.custid)">
 
             <a [ngStyle]="{'color':'red' }">
               VIEW ORDERS

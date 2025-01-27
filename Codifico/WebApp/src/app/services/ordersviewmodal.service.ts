@@ -26,4 +26,10 @@ export class OrderViewModalService {
 
     return this.http.get<OrderViewModal[]>(this.apiUrl);
   }
+
+  getOrdersByCustomerId(id: any): Observable<OrderViewModal[]> {
+
+    this.apiUrl = `https://localhost:7145/OrdersView?idCustomer=${id}`;
+    return this.http.get<OrderViewModal[]>(this.apiUrl);
+  }
 }

@@ -78,7 +78,6 @@ export class OrdersNewModalComponent {
     this._orderRequest.empid = this.selectedEmpleado;
     this._orderRequest.productid = this.selectedProducto;
     this._orderRequest.shipperid = this.selectedShipper;
-    this._orderRequest.custid = 78;
 
     this.ordernewModalService.saveData(this._orderRequest).subscribe(
       response => {

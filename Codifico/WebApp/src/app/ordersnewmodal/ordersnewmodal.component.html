@@ -30,64 +30,70 @@
 
       <!-- Segunda Fila -->
       <div class="form-row">
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Ship Name</mat-label>
-            <input matInput id="shipName" name="shipName" placeholder="Enter Ship Name" [(ngModel)]="_orderRequest.shipname" >
-          </mat-form-field>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Cust Id</mat-label>
+              <input matInput id="custid" name="custid" placeholder="CustId" [(ngModel)]="_orderRequest.custid">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Ship Name</mat-label>
+              <input matInput id="shipName" name="shipName" placeholder="Enter Ship Name" [(ngModel)]="_orderRequest.shipname">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Ship City</mat-label>
+              <input matInput id="shipCity" name="shipCity" placeholder="Enter Ship City" [(ngModel)]="_orderRequest.shipcity">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Ship Country</mat-label>
+              <input matInput id="shipCountry" name="shipCountry" placeholder="Enter Ship Country" [(ngModel)]="_orderRequest.shipcountry">
+            </mat-form-field>
+          </div>
         </div>
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Ship City</mat-label>
-            <input matInput id="shipCity" name="shipCity" placeholder="Enter Ship City" [(ngModel)]="_orderRequest.shipcity">
-          </mat-form-field>
-        </div>
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Ship Country</mat-label>
-            <input matInput id="shipCountry" name="shipCountry" placeholder="Enter Ship Country" [(ngModel)]="_orderRequest.shipcountry">
-          </mat-form-field>
-        </div>
-      </div>
 
-      <!-- Tercera Fila -->
-      <div class="form-row">
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Order Date</mat-label>
-            <input matInput [matDatepicker]="orderDatePicker" id="orderDate" name="orderDate" [(ngModel)]="_orderRequest.orderdate">
-            <mat-datepicker-toggle matSuffix [for]="orderDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker #orderDatePicker></mat-datepicker>
-          </mat-form-field>
+        <!-- Tercera Fila -->
+        <div class="form-row">
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Order Date</mat-label>
+              <input matInput [matDatepicker]="orderDatePicker" id="orderDate" name="orderDate" [(ngModel)]="_orderRequest.orderdate">
+              <mat-datepicker-toggle matSuffix [for]="orderDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #orderDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Required Date</mat-label>
+              <input matInput [matDatepicker]="requiredDatePicker" id="requiredDate" name="requiredDate" [(ngModel)]="_orderRequest.requireddate">
+              <mat-datepicker-toggle matSuffix [for]="requiredDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #requiredDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Shipped Date</mat-label>
+              <input matInput [matDatepicker]="shippedDatePicker" id="shippedDate" name="shippedDate" [(ngModel)]="_orderRequest.shippeddate">
+              <mat-datepicker-toggle matSuffix [for]="shippedDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #shippedDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
         </div>
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Required Date</mat-label>
-            <input matInput [matDatepicker]="requiredDatePicker" id="requiredDate" name="requiredDate"  [(ngModel)]="_orderRequest.requireddate">
-            <mat-datepicker-toggle matSuffix [for]="requiredDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker #requiredDatePicker></mat-datepicker>
-          </mat-form-field>
-        </div>
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Shipped Date</mat-label>
-            <input matInput [matDatepicker]="shippedDatePicker" id="shippedDate" name="shippedDate" [(ngModel)]="_orderRequest.shippeddate">
-            <mat-datepicker-toggle matSuffix [for]="shippedDatePicker"></mat-datepicker-toggle>
-            <mat-datepicker #shippedDatePicker></mat-datepicker>
-          </mat-form-field>
-        </div>
-      </div>
 
-      <!-- Cuarta Fila -->
-      <div class="form-row">
-        <div class="form-group">
-          <mat-form-field appearance="fill">
-            <mat-label>Freight</mat-label>
-            <input matInput type="number" id="freight" name="freight" placeholder="Enter Freight" [(ngModel)]="_orderRequest.freight">
-          </mat-form-field>
+        <!-- Cuarta Fila -->
+        <div class="form-row">
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Freight</mat-label>
+              <input matInput type="number" id="freight" name="freight" placeholder="Enter Freight" [(ngModel)]="_orderRequest.freight">
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-    </fieldset>
+</fieldset>
 
     <!-- Sección Order Details -->
     <fieldset>
