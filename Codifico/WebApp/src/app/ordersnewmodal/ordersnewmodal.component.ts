@@ -1,24 +1,13 @@
 
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-
-
-
-import { OrderNewModalService, Orders, OrderDetails, RequestOrdersCreate } from '../services/ordersnewmodal.service';
+import { Component, Inject } from '@angular/core';
+import { OrderNewModalService,  RequestOrdersCreate } from '../services/ordersnewmodal.service';
 import { EmployeeService, EmployeeDropDown } from '../services/employee.service';
 import { ProductService, ProductDropDown } from '../services/product.service';
 import { ShipperService, ShipperDropDown } from '../services/shipper.service';
 
 import { MatDialogRef } from '@angular/material/dialog';
 
-
+import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'ordersnew-modal',
@@ -63,7 +52,8 @@ export class OrdersNewModalComponent {
     private emploService: EmployeeService,
     private prodService: ProductService,
     private shipperService: ShipperService,
-    private ordernewModalService: OrderNewModalService
+    private ordernewModalService: OrderNewModalService,
+    @Inject(MAT_DIALOG_DATA) public data: any
   )
   {
     this.selectedEmpleado = this.emplo[0]?.empid;
@@ -73,12 +63,11 @@ export class OrdersNewModalComponent {
 
 
   onSave() {
-
-
+;
     this._orderRequest.empid = this.selectedEmpleado;
     this._orderRequest.productid = this.selectedProducto;
     this._orderRequest.shipperid = this.selectedShipper;
-    this._orderRequest.custid = 78;
+    this._orderRequest.custid = this.data;
 
     this.ordernewModalService.saveData(this._orderRequest).subscribe(
       response => {
@@ -88,6 +77,10 @@ export class OrdersNewModalComponent {
         console.error('Error al guardar datos:', error);
       }
     );
+
+    window.alert("Info guardada correctamente");
+
+    this.closeForm();
   }
 
 

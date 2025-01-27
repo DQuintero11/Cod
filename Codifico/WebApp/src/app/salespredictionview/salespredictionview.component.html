@@ -14,10 +14,6 @@
           Customer
           <span *ngIf="campoOrdenado === 'companyname'">{{ direccionOrden === 'asc' ? '▲' : '▼' }}</span>
         </th>
-        <!--<th (click)="cambiarOrden('ciudad')">
-    Ciudad
-    <span *ngIf="campoOrdenado === 'ciudad'">{{ direccionOrden === 'asc' ? '▲' : '▼' }}</span>
-  </th>-->
         <th (click)="cambiarOrden('fechaUltimaOrden')">
           LastOrderDate
           <span *ngIf="campoOrdenado === 'fechaPosibleSiguienteOrden'">{{ direccionOrden === 'asc' ? '▲' : '▼' }}</span>
@@ -38,7 +34,7 @@
         <td>{{ registro.fechaPosibleSiguienteOrden | date:'shortDate'  }}</td>
         <td>
 
-          <button mat-raised-button (click)="openDialog()">
+          <button mat-raised-button (click)="openDialog(registro.custid)">
 
             <a [ngStyle]="{'color':'red' }">
               VIEW ORDERS
@@ -49,7 +45,7 @@
 
         </td>
         <td>
-          <button mat-raised-button (click)="openDialogNew()">
+          <button mat-raised-button (click)="openDialogNew(registro.custid)">
             <a [ngStyle]="{'color':'green' }">
               NEW ORDER
             </a>

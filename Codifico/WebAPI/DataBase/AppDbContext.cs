@@ -1,11 +1,6 @@
 ﻿using Codifico.WebAPI.Objects.BaseClass;
 using Codifico.WebAPI.Objects.Extends;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System.Collections.Generic;
-using System.Data;
-using System.Reflection.Metadata;
 
 namespace Codifico.WebAPI.DataBase
 {

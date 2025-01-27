@@ -5,11 +5,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { OrdersViewModalComponent } from '../ordersviewmodal/ordersviewmodal.component';
 import { OrdersNewModalComponent } from '../ordersnewmodal/ordersnewmodal.component';
 import { OrderViewModalService, OrderViewModal } from '../services/ordersviewmodal.service';
-import { OrderNewModalService, Orders , OrderDetails} from '../services/ordersnewmodal.service';
-import { ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { OrderNewModalService } from '../services/ordersnewmodal.service';
+
 
 @Component({
   selector: 'salespredictionviewcomponent',
@@ -22,8 +19,6 @@ export class SalesPredictionViewComponent implements OnInit {
   obj: OrderViewModal[] = [];
 
 
-
-
   constructor(private ordersPredictionService: OrdersPredictionService,
     private ordersViewModalService: OrderViewModalService,
     private ordersNewModalService: OrderNewModalService,
@@ -34,19 +29,19 @@ export class SalesPredictionViewComponent implements OnInit {
 };
 
 
-  async openDialog(): Promise<void> {
+  async openDialog(id:any): Promise<void> {
 
- 
-    this.ordersViewModalService.getOrdersByCustomer().subscribe(data => {
+
+    this.ordersViewModalService.getOrdersByCustomerId(id).subscribe(data => {
       this.obj = data;
     });
 
 
-    await this.esperar(5000);
+    await this.esperar(3000);
 
     const dialogRef = this.dialog.open(OrdersViewModalComponent, {
-      width: '800px',  
-      height: '800px', 
+      width: '700px',  
+      height: '500px', 
       disableClose: true,
    
       data: this.obj,
@@ -60,25 +55,16 @@ export class SalesPredictionViewComponent implements OnInit {
 
 
 
-  async openDialogNew(): Promise<void> {
+  async openDialogNew(id:any): Promise<void> {
 
-
-    //this.ordersViewModalService.getOrdersByCustomer().subscribe(data => {
-    //  this.obj = data;
-    //});
-
-
-    await this.esperar(5000);
 
     const dialogRef = this.dialog.open(OrdersNewModalComponent, {
       width: '1200px',
-      height: '1000px',
+      height: '800px',
       disableClose: true,
+      data: id
 
-     // data: this.obj,
     });
-
-
 
     dialogRef.afterClosed().subscribe(result => {
     });

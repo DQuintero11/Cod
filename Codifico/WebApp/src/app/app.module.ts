@@ -12,8 +12,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { SalesPredictionViewComponent } from './salespredictionview/salespredictionview.component';
 import { OrdersViewModalComponent } from './ordersviewmodal/ordersviewmodal.component';
 import { OrdersNewModalComponent } from './ordersnewmodal/ordersnewmodal.component';
@@ -32,8 +30,6 @@ import { OrdersPredictionService } from './services/ordersprediction.service';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     SalesPredictionViewComponent,
     OrdersViewModalComponent,
     OrdersNewModalComponent
@@ -55,8 +51,6 @@ import { OrdersPredictionService } from './services/ordersprediction.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'salespredictionview', component: SalesPredictionViewComponent },
       { path: 'ordernewmodal', component: OrdersNewModalComponent },
       { path: 'orderviewmodal', component: OrdersViewModalComponent }
