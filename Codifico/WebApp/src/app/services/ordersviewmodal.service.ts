@@ -22,10 +22,6 @@ export class OrderViewModalService {
 
   constructor(private http: HttpClient) { }
 
-  getOrdersByCustomer(): Observable<OrderViewModal[]> {
-
-    return this.http.get<OrderViewModal[]>(this.apiUrl);
-  }
 
   getOrdersByCustomerId(id: any): Observable<OrderViewModal[]> {
 
