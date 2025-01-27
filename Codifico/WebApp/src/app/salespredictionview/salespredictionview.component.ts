@@ -5,11 +5,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { OrdersViewModalComponent } from '../ordersviewmodal/ordersviewmodal.component';
 import { OrdersNewModalComponent } from '../ordersnewmodal/ordersnewmodal.component';
 import { OrderViewModalService, OrderViewModal } from '../services/ordersviewmodal.service';
-import { OrderNewModalService, Orders , OrderDetails} from '../services/ordersnewmodal.service';
-import { ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { OrderNewModalService } from '../services/ordersnewmodal.service';
+
 
 @Component({
   selector: 'salespredictionviewcomponent',
@@ -20,8 +17,6 @@ export class SalesPredictionViewComponent implements OnInit {
 
   op: OrderPrediction[] = [];
   obj: OrderViewModal[] = [];
-
-
 
 
   constructor(private ordersPredictionService: OrdersPredictionService,
@@ -42,7 +37,7 @@ export class SalesPredictionViewComponent implements OnInit {
     });
 
 
-    await this.esperar(5000);
+    await this.esperar(3000);
 
     const dialogRef = this.dialog.open(OrdersViewModalComponent, {
       width: '700px',  
@@ -63,19 +58,13 @@ export class SalesPredictionViewComponent implements OnInit {
   async openDialogNew(id:any): Promise<void> {
 
 
-
-    await this.esperar(5000);
-
     const dialogRef = this.dialog.open(OrdersNewModalComponent, {
-      width: '1200px',
-      height: '1000px',
+      width: '120px',
+      height: '800px',
       disableClose: true,
       data: id
 
-     // data: this.obj,
     });
-
-
 
     dialogRef.afterClosed().subscribe(result => {
     });

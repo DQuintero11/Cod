@@ -14,10 +14,6 @@
           Customer
           <span *ngIf="campoOrdenado === 'companyname'">{{ direccionOrden === 'asc' ? '▲' : '▼' }}</span>
         </th>
-        <!--<th (click)="cambiarOrden('ciudad')">
-    Ciudad
-    <span *ngIf="campoOrdenado === 'ciudad'">{{ direccionOrden === 'asc' ? '▲' : '▼' }}</span>
-  </th>-->
         <th (click)="cambiarOrden('fechaUltimaOrden')">
           LastOrderDate
           <span *ngIf="campoOrdenado === 'fechaPosibleSiguienteOrden'">{{ direccionOrden === 'asc' ? '▲' : '▼' }}</span>
