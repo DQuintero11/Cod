@@ -59,7 +59,7 @@ export class SalesPredictionViewComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(OrdersNewModalComponent, {
-      width: '120px',
+      width: '1200px',
       height: '800px',
       disableClose: true,
       data: id
