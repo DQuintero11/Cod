@@ -1,0 +1,40 @@
+.container {
+  width: 70%;
+  margin: 10px auto;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 7px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+  .form-group:last-child {
+    margin-right: 0;
+  }
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+  .form-actions button {
+    width: 60px;
+  }
+
