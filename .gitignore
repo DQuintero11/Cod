@@ -1,0 +1,9 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/Codifico/WebApp/.angular/cache/14.2.13
+/NUnitTest/bin
+/NUnitTest/obj
+/UnitTest/obj/Debug/net7.0
+/.vs
